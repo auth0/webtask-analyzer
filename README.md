@@ -24,7 +24,7 @@ export interface AnalyzerOptions {
 }
 
 export interface RequireNode {
-    type: 'dynamic_require' | 'global' | 'require';
+    type: 'global' | 'require' | 'require_dynamic';
     spec: string;
     start: number;
     end: number;

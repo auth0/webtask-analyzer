@@ -101,7 +101,7 @@ lab.describe('analysis.js', () => {
         expect(result).to.be.an.array();
         expect(result).to.contain([
             {
-                type: 'dynamic_require',
+                type: 'require_dynamic',
                 spec: 'requestName',
                 start: 69,
                 end: 89,
