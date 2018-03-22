@@ -1,0 +1,32 @@
+{
+  "name": "webtask-analyzer",
+  "version": "1.0.0",
+  "description": "Webtask analysis tools",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -fv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/webtask-analyzer.git"
+  },
+  "keywords": [],
+  "author": "Geoffrey Goodman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0/webtask-analyzer/issues"
+  },
+  "homepage": "https://github.com/auth0/webtask-analyzer#readme",
+  "devDependencies": {
+    "@types/acorn": "^4.0.3",
+    "code": "^5.2.0",
+    "eslint": "^4.19.0",
+    "lab": "^15.4.1"
+  },
+  "dependencies": {
+    "acorn": "^5.5.3",
+    "acorn-globals": "^4.1.0",
+    "astring": "^1.2.0",
+    "wreck": "^12.5.1"
+  }
+}
