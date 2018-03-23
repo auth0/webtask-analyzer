@@ -109,4 +109,28 @@ lab.describe('analysis.js', () => {
             },
         ]);
     });
+
+    lab.test('will resolve node core modules', async () => {
+        const dependsOnRequestCode = await readFile(
+            Path.join(__dirname, './fixtures/depends_on_http.js'),
+            'utf8'
+        );
+        const result = await analyzer.findDependenciesInCode(
+            dependsOnRequestCode
+        );
+
+        expect(result).to.be.an.array();
+        expect(result).to.contain([
+            {
+                type: 'require',
+                spec: 'http',
+                start: 38,
+                end: 53,
+                resolved: {
+                    name: 'http',
+                    version: '<core>',
+                },
+            },
+        ]);
+    });
 });
