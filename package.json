@@ -1,6 +1,6 @@
 {
   "name": "webtask-analyzer",
-  "version": "0.0.0",
+  "version": "1.0.0-pre.0",
   "description": "Webtask analysis tools",
   "main": "lib/index.js",
   "scripts": {
