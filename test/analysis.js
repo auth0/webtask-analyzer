@@ -133,4 +133,28 @@ lab.describe('analysis.js', () => {
             },
         ]);
     });
+
+    lab.test('will resolve verquire-style modules', async () => {
+        const dependsOnRequestCode = await readFile(
+            Path.join(__dirname, './fixtures/depends_on_lodash@4.8.2.js'),
+            'utf8'
+        );
+        const result = await analyzer.findDependenciesInCode(
+            dependsOnRequestCode
+        );
+
+        expect(result).to.be.an.array();
+        expect(result).to.contain([
+            {
+                type: 'require',
+                spec: 'lodash@4.8.2',
+                start: 32,
+                end: 55,
+                resolved: {
+                    name: 'lodash',
+                    version: '4.8.2',
+                },
+            },
+        ]);
+    });
 });
